@@ -1,6 +1,6 @@
 id: a505c3df-5122-4840-85fa-0f4404db5131
 deploy:
   ignore: []
-  directory: .
+  directory: _site
 plugins:
   - name: webpage
