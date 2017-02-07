@@ -8,4 +8,4 @@ script:
 - bundle exec jekyll build
 after_success:
 - npm install aerobatic-cli -g
-- aero deploy -c "https://github.com/dundonian/simplest/commit/${TRAVIS_COMMIT}" -d _site
+- aero deploy -d _site
