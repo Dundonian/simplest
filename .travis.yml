@@ -2,10 +2,15 @@ language: ruby
 env:
   global:
   - secure: JpuxrUZwRdtC/M8+PiiXV4TwSxtJYhNRqsuKt9WnBsC4jojpPga0dftLVtvIyAbfDcAM+kzBsalLHXcvuAyigTLcFphDm1CxaRbxuLI4Zd8iE0F64Dsi8Ge6R6hvCqFdqnNUwjPXNtJBJ55kGcItPz0JN2uxwK3kPrmog48HTGj8/VDDFyQh6iSmSyQbAlpsHtP24qdVo4+xhJp0foa5Bw31+Mn8LN779OsVGx/EeQ2MWuX3vKwwdml2+GIvCXbAaKfwpISgrnAnByOcEXS5y/IztP1509JioqklTgtL5fhWqVkb2onpyPljL5JJ9Fbc2u/hizdb5ks4KTZS21/uDoBP8fJ4A+G3ganB3btwS83ZyJOT2O1i3LMNqwjDJBzCch6QVwInVnGYtDzlSVLamwTokslwaCoaYAZFyIgxk7gsPTlqr9zbSJin4PXXL/IcJldGbHgU5fwNZVUL/SGLZhvDCj7ndQUxJzWZd4oOD3T8s9AIZ6A8wkoP7Lve6eFW630yaMAG4BLcwamxG+d7dgsYtQB94jNqoi+xlximwRSGzO6IDDQU9vh0HfuM52YQNefD81y4tGic7DTLG7moPzjBJuOM9UjF+OniwP0+DjgIxPkrLRFOVS1e2KyKIwj5Do1l9onDcOZTPKmY+cvz4K1otJ9pmDMT4DdLeEfdte0=
+  - TRAVIS_NODE_VERSION="6.9.5"
+
 install:
-- bundle install --path vendor/bundle
+  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
+  - npm install aerobatic-cli -g
+  - bundle install --path vendor/bundle
+
 script:
 - bundle exec jekyll build
+
 after_success:
-- npm install aerobatic-cli -g
 - aero deploy
