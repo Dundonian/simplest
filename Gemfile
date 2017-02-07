@@ -2,10 +2,10 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
-gem 'html-proofer', '~> 3.0', '>= 3.0.6'
-gem 'jekyll', '~> 3.0', '>= 3.0.1'
+gem 'html-proofer', '~> 3.4'
+gem 'jekyll', '~> 3.3', '>= 3.3.1'
 gem 'jekyll-paginate', '~> 1.1'
-gem 'sass', '~> 3.4', '>= 3.4.20'
-gem 'bourbon', '~> 4.2', '>= 4.2.6'
-gem 'pygments.rb', '~> 0.6.3'
+gem 'sass', '~> 3.4', '>= 3.4.23'
+gem 'bourbon', '~> 4.3'
+gem 'pygments.rb', '~> 1.1', '>= 1.1.1'
 
