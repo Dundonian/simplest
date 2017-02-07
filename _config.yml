@@ -4,7 +4,7 @@ title: Simplest
 description: "A free Jekyll theme for download"
 keywords: "Jekyll, theme, free, download, SEO, blog, web"
 url: https://wide-eyed-fall.aerobatic.io
-baseurl: "https://wide-eyed-fall.aerobatic.io"
+baseurl: "/"
 # baseurl: null
 
 google_analytics: UA-52446115-1
